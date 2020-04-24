@@ -12,6 +12,7 @@ import getImageForWeather from './utils/getImageForWeather';
 import SearchInput from './components/SearchInput';
 
 export default function App() {
+  const location = 'San Francisco';
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -23,9 +24,10 @@ export default function App() {
         imageStyle={styles.image}
       >
         <View style={styles.detailsContainer}>
-          <Text style={[styles.largeText, styles.textStyle]}>San Francisco</Text>
+          <Text style={[styles.largeText, styles.textStyle]}>{location}</Text>
           <Text style={[styles.smallText, styles.textStyle]}>Light Cloud</Text>
           <Text style={[styles.largeText, styles.textStyle]}>24°</Text>
+
           <SearchInput placeholder="Search any city" />
         </View>
       </ImageBackground>
@@ -55,7 +57,8 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     textAlign: 'center',
-    fontFamily: Platform.OS === 'ios' ? 'AvenirNext-Regular' : 'Roboto',
+    fontFamily:
+      Platform.OS === 'ios' ? 'AvenirNext-Regular' : 'Roboto',
     color: 'white',
   },
   largeText: {
