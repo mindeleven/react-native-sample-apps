@@ -1,5 +1,6 @@
 export const fetchLocationId = async city => {
   const response = await fetch(
+//    `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${city}`,
     `https://www.metaweather.com/api/location/search/?query=${city}`,
   );
   const locations = await response.json();
@@ -8,6 +9,7 @@ export const fetchLocationId = async city => {
 
 export const fetchWeather = async woeid => {
   const response = await fetch(
+//    `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`,
     `https://www.metaweather.com/api/location/${woeid}/`,
   );
   const { title, consolidated_weather } = await response.json();
