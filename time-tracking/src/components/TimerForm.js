@@ -1,7 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
+import TimerButton from './TimerButton';
 
 function TimerForm({ id, title, project }) {
+
+  const submitText = id ? 'Update' : 'Create';
+
   return (
     <View style={styles.formContainer}>
       <View style={styles.attributeContainer}>
@@ -25,10 +29,14 @@ function TimerForm({ id, title, project }) {
         </View>
       </View>
       <View style={styles.buttonGroup}>
-        <Button
+        <TimerButton
+          small
+          color="#21BA45"
           title="submitText"
         />
-        <Button
+        <TimerButton
+          small
+          color="#DB2828"
           title="Cancel"
         />
       </View>
